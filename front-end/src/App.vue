@@ -1,9 +1,13 @@
 <script lang="ts">
-export default {
+import Top from "./components/Top.vue";
 
+export default {
+  components: {
+    Top
+  }
 }
 </script>
 
 <template>
-  <h1>Teste pedroca</h1>
+  <Top></Top>
 </template>
