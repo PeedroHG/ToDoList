@@ -18,7 +18,7 @@ input {
   padding: 1rem 1rem 1rem 3rem;
   width: 22rem;
   height: 3.5rem;
-  background-color: rgba(135, 135, 140, 0.1);
+  background-color: var(--fundo-input);
   margin: 1.3rem;
   border-radius: 16px;
   line-height: 24px;
