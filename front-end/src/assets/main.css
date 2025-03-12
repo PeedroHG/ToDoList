@@ -2,8 +2,10 @@
 
 :root {
   --fundo-preto: #121212;
-  --branco-texto: rgba(255, 255, 255, 57);
+  --branco-tiulo: rgba(255, 233, 233, 1);
+  --branco-texto: rgba(255, 255, 255, 0.57);
   --branco-input: rgba(255, 255, 255, 0.34);
+  --azul: rgba(30, 50, 139, 1);
   --font: 'Poppins', sans-serif;
 }
 

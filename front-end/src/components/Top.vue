@@ -1,8 +1,10 @@
 <script lang="ts">
 import Input from './Input.vue'
+import Button from './Button.vue'
 export default {
   components: {
     Input,
+    Button
   },
 }
 </script>
@@ -11,6 +13,7 @@ export default {
   <section class="topo">
     <img src="@/assets/images/logo.png" class="logo" />
     <Input></Input>
+    <Button texto="Adicionar"></Button>
   </section>
 </template>
 
