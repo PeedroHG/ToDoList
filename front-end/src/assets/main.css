@@ -1,0 +1,36 @@
+:root {
+  --fundo-preto: #121212;
+  --branco-texto: rgba(255, 255, 255, 57);
+
+  --font-family-padrao: Nunito Sans, sans-serif;
+  --cabecalhos: Paytone One, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background-color: inherit;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-family-padrao);
+  color: var(--branco-texto);
+  background-color: var(--fundo-preto);
+}
