@@ -7,6 +7,8 @@
   --branco-input: rgba(255, 255, 255, 0.34);
   --fundo-input: rgba(135, 135, 140, 0.1);
   --azul: rgba(30, 50, 139, 1);
+  --amarelo: rgba(242, 187, 19, 1);
+  --amarelo-linha: rgba(217, 149, 24, 0.54);
   --font: 'Poppins', sans-serif;
 }
 
@@ -38,4 +40,3 @@ body {
   color: var(--branco-texto);
   background-color: var(--fundo-preto);
 }
-

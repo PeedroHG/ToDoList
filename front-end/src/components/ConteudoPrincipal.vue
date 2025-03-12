@@ -1,5 +1,7 @@
 <script lang="ts">
 import ItemLista from './ItemLista.vue'
+import Linha from './Linha.vue';
+
 export default {
   data() {
     return {
@@ -8,6 +10,7 @@ export default {
   },
   components: {
     ItemLista,
+    Linha
   },
 }
 </script>
@@ -18,6 +21,7 @@ export default {
       <ItemLista v-for="task in tasks" :task="task" :key="task"></ItemLista>
     </ul>
   </section>
+  <Linha cor="amarelo"></Linha>
 </template>
 
 <style scoped>
