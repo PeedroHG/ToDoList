@@ -44,7 +44,7 @@ export default {
       ></ItemLista>
     </ul>
   </div>
-  <Linha cor="azul"></Linha>
+  <Linha cor="azul" v-if="tasks.length != 0"></Linha>
   <div class="tasks feitas">
     <ul>
       <ItemLista
