@@ -1,27 +1,63 @@
 <script lang="ts">
 import ItemLista from './ItemLista.vue'
-import Linha from './Linha.vue';
+import Linha from './Linha.vue'
 
 export default {
   data() {
     return {
-      tasks: ['Ir a academia', 'Estudar para geometria analítica', 'Comprar abacate', 'Jogar bola sábado de manhã'] as string[],
+      tasks: [
+        'Ir a academia',
+        'Estudar para geometria analítica',
+        'Comprar abacate',
+        'Jogar bola sábado de manhã',
+      ] as string[],
+      tasksFeitas: [] as string[],
     }
   },
   components: {
     ItemLista,
-    Linha
+    Linha,
+  },
+  methods: {
+    atualizarSelecionado(task: string, novoEstado: boolean) {
+      if (novoEstado) {
+        this.tasks = this.tasks.filter((t) => t !== task) 
+        this.tasksFeitas.push(task) 
+      } else {
+        this.tasksFeitas = this.tasksFeitas.filter((t) => t !== task) 
+        this.tasks.push(task)
+      }
+    },
   },
 }
 </script>
 
 <template>
-  <section class="tasks">
+  <div class="tasks a-fazer">
     <ul>
-      <ItemLista v-for="task in tasks" :task="task" :key="task"></ItemLista>
+      <ItemLista
+        v-for="(task, index) in tasks"
+        :task="task"
+        :key="index"
+        :selecionado="false"
+        @atualizar-selecionado="atualizarSelecionado"
+      ></ItemLista>
     </ul>
-  </section>
-  <Linha cor="amarelo"></Linha>
+  </div>
+  <Linha cor="azul"></Linha>
+  <div class="tasks feitas">
+    <ul>
+      <ItemLista
+        v-for="(task, index) in tasksFeitas"
+        :task="task"
+        :key="index"
+        :selecionado="true"
+        @atualizar-selecionado="atualizarSelecionado"
+      ></ItemLista>
+    </ul>
+  </div>
+
+  <Linha cor="amarelo" v-if="tasksFeitas.length != 0"></Linha>
 </template>
 
 <style scoped>
@@ -31,5 +67,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 3rem;
+}
+.feitas {
+  margin-top: 1.5rem;
 }
 </style>
