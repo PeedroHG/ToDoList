@@ -2,9 +2,25 @@
 import Input from './Input.vue'
 import Button from './Button.vue'
 export default {
+  data() {
+    return {
+      novaTask: '',
+    }
+  },
   components: {
     Input,
-    Button
+    Button,
+  },
+  methods: {
+    adicionarTask() {
+      if (this.novaTask.trim()) {
+        this.$emit('adicionarTask', this.novaTask)
+        this.novaTask = ''
+      }
+    },
+    atualizarInput(valor: string) {
+      this.novaTask = valor
+    },
   },
 }
 </script>
@@ -12,8 +28,8 @@ export default {
 <template>
   <section class="topo">
     <img src="@/assets/images/logo.png" class="logo" />
-    <Input></Input>
-    <Button texto="Adicionar"></Button>
+    <Input @input-alterado="atualizarInput"></Input>
+    <Button texto="Adicionar" @click="adicionarTask"></Button>
   </section>
 </template>
 

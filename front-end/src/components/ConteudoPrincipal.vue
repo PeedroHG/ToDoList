@@ -3,14 +3,15 @@ import ItemLista from './ItemLista.vue'
 import Linha from './Linha.vue'
 
 export default {
+  props: {
+    novaTask: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      tasks: [
-        'Ir a academia',
-        'Estudar para geometria analítica',
-        'Comprar abacate',
-        'Jogar bola sábado de manhã',
-      ] as string[],
+      tasks: [] as string[],
       tasksFeitas: [] as string[],
     }
   },
@@ -26,6 +27,13 @@ export default {
       } else {
         this.tasksFeitas = this.tasksFeitas.filter((t) => t !== task) 
         this.tasks.push(task)
+      }
+    },
+  },
+  watch: {
+    novaTask(newTask: string) {
+      if (newTask.trim()) {
+        this.tasks.push(newTask); // Adiciona a nova task à lista
       }
     },
   },

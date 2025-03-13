@@ -1,11 +1,23 @@
 <script lang="ts">
-export default {}
+export default {
+  data() {
+    return {
+      valor: '', 
+    }
+  },
+  methods: {
+    atualizarValor(event: Event) {
+      this.valor = (event.target as HTMLInputElement).value; 
+      this.$emit('input-alterado', this.valor);
+    },
+  },
+}
 </script>
 
 <template>
   <div class="input-container">
     <img src="@/assets/images/pencil-icon.png" class="icon" />
-    <input type="text" class="input" placeholder="Digite sua task" />
+    <input type="text" class="input" :value="valor" @input="atualizarValor" placeholder="Digite sua task" />
   </div>
 </template>
 
