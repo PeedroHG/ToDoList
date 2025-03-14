@@ -15,14 +15,19 @@ export default {
 
 <style scoped>
 .botao-add {
-    padding: 1rem;
-    width: 17rem;
-    height: 3.2rem;
-    line-height: 24px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 16px;
-    color: var(--branco-tiulo);
-    background-color: var(--azul);
+  padding: 1rem;
+  width: 17rem;
+  height: 3.2rem;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  color: var(--branco-tiulo);
+  background-color: var(--azul);
+}
+@media screen and (min-width: 1000px) {
+  .botao-add {
+    width: 25.438rem;
+  }
 }
 </style>

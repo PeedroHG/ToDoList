@@ -44,4 +44,10 @@ export default {
 .logo {
   width: 2.3rem;
 }
+
+@media screen and (min-width: 1000px) {
+  .logo {
+    width: 3rem;
+  }
+}
 </style>

@@ -40,7 +40,7 @@ export default {
 .text {
   margin-left: 0.7rem;
 }
-
+ 
 .checkbox {
   appearance: none;
   background-color: var(--fundo-input);

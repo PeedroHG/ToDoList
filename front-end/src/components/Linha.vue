@@ -30,4 +30,10 @@ export default defineComponent({
 .amarelo {
   border-top: 2px solid var(--amarelo-linha); /* Estilo para a cor laranja */
 }
+
+@media screen and (min-width: 1000px) {
+  .linha {
+    width: 23rem;
+  }
+}
 </style>

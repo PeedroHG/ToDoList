@@ -24,3 +24,5 @@ export default {
   <Top @adicionarTask="adicionarTask"></Top>
   <ConteudoPrincipal :novaTask="novaTask"></ConteudoPrincipal>
 </template>
+
+
