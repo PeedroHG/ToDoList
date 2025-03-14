@@ -1,14 +1,15 @@
 <script lang="ts">
 export default {
-  data() {
-    return {
-      valor: '',
-    }
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     atualizarValor(event: Event) {
-      this.valor = (event.target as HTMLInputElement).value
-      this.$emit('input-alterado', this.valor)
+      const valor = (event.target as HTMLInputElement).value
+      this.$emit('input-alterado', valor)
     },
   },
 }
@@ -20,7 +21,7 @@ export default {
     <input
       type="text"
       class="input"
-      :value="valor"
+      :value="value"
       @input="atualizarValor"
       placeholder="Digite sua task"
     />

@@ -28,7 +28,7 @@ export default {
 <template>
   <section class="topo">
     <img src="@/assets/images/logo.png" class="logo" />
-    <Input @input-alterado="atualizarInput"></Input>
+    <Input :value="novaTask" @input-alterado="atualizarInput"></Input>
     <Button texto="Adicionar" @click="adicionarTask"></Button>
   </section>
 </template>
